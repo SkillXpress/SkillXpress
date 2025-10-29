@@ -10,6 +10,7 @@ import WhyChooseUs from '@/components/landing/WhyChooseUs';
 import SkillCategories from '@/components/landing/SkillCategories';
 import ForBusiness from '@/components/landing/ForBusiness';
 import Faq from '@/components/landing/Faq';
+import ContactForm from '@/components/landing/ContactForm';
 
 import {
   featuredExperts,
@@ -31,8 +32,9 @@ const sectionVariants = {
   },
 };
 
-const AnimatedSection = ({ children }: { children: React.ReactNode }) => (
+const AnimatedSection = ({ children, id }: { children: React.ReactNode, id?: string }) => (
   <motion.section
+    id={id}
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, amount: 0.2 }}
@@ -74,6 +76,10 @@ export default function Home() {
       
       <AnimatedSection>
         <Faq />
+      </AnimatedSection>
+
+      <AnimatedSection id="contact">
+        <ContactForm />
       </AnimatedSection>
       
       <section className="py-20 md:py-24 bg-secondary/50">

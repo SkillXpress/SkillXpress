@@ -191,7 +191,7 @@ const Hero = () => {
                 <Link href="/pricing">See Pricing</Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/corporate">Contact Us</Link>
+                <Link href="#contact">Contact Us</Link>
               </Button>
           </div>
         </div>
