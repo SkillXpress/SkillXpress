@@ -14,8 +14,13 @@ const Footer = () => {
           </p>
           <div className="flex justify-center mt-6">
             <Button variant="ghost" size="icon" asChild>
-              <a href="#" aria-label="Github">
-                <Github className="h-5 w-5" />
+              <a href="#" aria-label="Instagram">
+                <Instagram className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href="#" aria-label="Facebook">
+                <Facebook className="h-5 w-5" />
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
@@ -24,7 +29,7 @@ const Footer = () => {
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="#" aria-label="Linkedin">
+              <a href="https://www.linkedin.com/company/skillxpress25" aria-label="Linkedin">
                 <Linkedin className="h-5 w-5" />
               </a>
             </Button>
