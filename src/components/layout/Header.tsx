@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, UserCog } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 import Logo from '@/components/Logo';
@@ -13,7 +13,6 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -85,20 +84,6 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center gap-2">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" asChild disabled>
-                    <Link href="/admin">
-                      <UserCog />
-                    </Link>
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Admin Dashboard (Disabled)</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/login">Log In</Link>
             </Button>
