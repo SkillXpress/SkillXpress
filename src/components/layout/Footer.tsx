@@ -35,7 +35,7 @@ const Footer = () => {
 
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
           <p className="text-sm text-foreground/60">
-            © {new Date().getFullYear()} SkillSprint. All Rights Reserved.
+            © {new Date().getFullYear()} SkillXpress. All Rights Reserved.
           </p>
           <div className="flex mt-3 -mx-2 sm:mt-0">
             <Link href="/terms" className="mx-2 text-sm text-foreground/60 transition-colors duration-300 hover:text-foreground">

@@ -18,7 +18,7 @@ const Testimonials = ({ testimonials }: TestimonialsProps) => {
             Trusted by Teams Worldwide
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Hear what our happy customers have to say about SkillSprint.
+            Hear what our happy customers have to say about SkillXpress.
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">

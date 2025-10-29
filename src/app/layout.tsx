@@ -6,7 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'SkillSprint - Instantly Match with Verified Experts',
+  title: 'SkillXpress - Instantly Match with Verified Experts',
   description: 'AI-Powered skill matching to connect you with top experts for any micro-task. Real-time availability, secure booking, and verified profiles.',
 };
 

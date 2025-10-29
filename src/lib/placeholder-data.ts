@@ -67,7 +67,7 @@ export const experts: Expert[] = [
         author: 'Chris Green',
         avatarUrl: 'https://picsum.photos/seed/chris/100/100',
         rating: 5,
-        comment: 'John\'s understanding of ML concepts is profound. He delivered a highly accurate model for our sentiment analysis task.',
+        comment: "John's understanding of ML concepts is profound. He delivered a highly accurate model for our sentiment analysis task.",
         date: '2024-06-01',
       },
     ],
@@ -131,7 +131,7 @@ export const testimonials: Testimonial[] = [
     company: 'Innovate Inc.',
     avatarUrl: 'testimonial-1-avatar',
     comment:
-      'SkillSprint revolutionized how we find and hire talent for short-term projects. The AI matching is incredibly accurate and saves us hours of searching. We found the perfect DevOps expert in minutes!',
+      'SkillXpress revolutionized how we find and hire talent for short-term projects. The AI matching is incredibly accurate and saves us hours of searching. We found the perfect DevOps expert in minutes!',
   },
   {
     id: '2',
@@ -140,6 +140,6 @@ export const testimonials: Testimonial[] = [
     company: 'Tech-Forward LLC',
     avatarUrl: 'testimonial-2-avatar',
     comment:
-      'The quality of experts on SkillSprint is outstanding. The verification process gives us confidence, and the platform is so easy to use. It\'s become our go-to for specialized skills on demand.',
+      'The quality of experts on SkillXpress is outstanding. The verification process gives us confidence, and the platform is so easy to use. It\'s become our go-to for specialized skills on demand.',
   },
 ];

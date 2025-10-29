@@ -2,17 +2,18 @@ import { Building, Check, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Badge } from '@/components/ui/badge';
 
 const features = [
   {
     icon: <Users className="h-8 w-8 text-primary" />,
     title: 'Curated Expert Teams',
-    description: 'We assemble and manage teams of experts tailored to your project\'s specific needs, ensuring perfect alignment and synergy.',
+    description: "We assemble and manage teams of experts tailored to your project's specific needs, ensuring perfect alignment and synergy.",
   },
   {
     icon: <Zap className="h-8 w-8 text-primary" />,
     title: 'Seamless Integration',
-    description: 'Integrate SkillSprint with your existing workflows through our robust API, enabling seamless talent management within your tools.',
+    description: 'Integrate SkillXpress with your existing workflows through our robust API, enabling seamless talent management within your tools.',
   },
   {
     icon: <Building className="h-8 w-8 text-primary" />,
@@ -29,10 +30,10 @@ export default function CorporatePage() {
       <section className="relative py-20 md:py-32 bg-secondary/50">
         <div className="container text-center">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl font-headline">
-                SkillSprint for Business
+                SkillXpress for Business
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
-                Empower your organization with on-demand access to a global network of verified tech experts. Scale your teams, accelerate projects, and drive innovation with SkillSprint Enterprise.
+                Empower your organization with on-demand access to a global network of verified tech experts. Scale your teams, accelerate projects, and drive innovation with SkillXpress Enterprise.
             </p>
             <Button size="lg" className="mt-8">
                 Request a Demo
@@ -48,7 +49,7 @@ export default function CorporatePage() {
               Flexible Talent for the Modern Enterprise
             </h2>
             <p className="mt-6 text-muted-foreground">
-              In a fast-paced market, agility is key. SkillSprint provides the flexible, high-quality talent you need to supplement your teams, tackle specialized projects, and stay ahead of the curve without the overhead of traditional hiring.
+              In a fast-paced market, agility is key. SkillXpress provides the flexible, high-quality talent you need to supplement your teams, tackle specialized projects, and stay ahead of the curve without the overhead of traditional hiring.
             </p>
             <div className="mt-8 space-y-6">
               {features.map((feature, index) => (
@@ -84,7 +85,7 @@ export default function CorporatePage() {
                 Ready to Supercharge Your Team?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-                Let's discuss how SkillSprint can meet your organization's unique needs.
+                Let's discuss how SkillXpress can meet your organization's unique needs.
             </p>
             <Button size="lg" className="mt-8">
                 Contact Sales

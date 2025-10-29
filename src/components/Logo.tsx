@@ -24,7 +24,7 @@ const Logo = (props: SVGProps<SVGSVGElement>) => {
         fill="url(#grad1)"
         className="font-headline"
       >
-        SkillSprint
+        SkillXpress
       </text>
     </svg>
   );
