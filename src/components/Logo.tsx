@@ -1,27 +1,46 @@
+
 import type { SVGProps } from 'react';
 
 const Logo = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 200 50"
-      width="120"
-      height="30"
+      viewBox="0 0 140 40"
+      width="110"
+      height="32"
       {...props}
     >
       <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 1 }} />
-          <stop offset="100%" style={{ stopColor: 'hsl(var(--accent))', stopOpacity: 1 }} />
+        <linearGradient id="logo-grad" x1="0%" y1="50%" x2="100%" y2="50%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" />
+          <stop offset="100%" stopColor="hsl(var(--accent))" />
         </linearGradient>
       </defs>
+      
+      {/* Icon */}
+      <path 
+        d="M20 5 C 5 15, 5 25, 20 35 S 35 25, 20 15" 
+        stroke="url(#logo-grad)" 
+        strokeWidth="3.5" 
+        fill="none" 
+        strokeLinecap="round"
+      />
+      <path 
+        d="M20 5 L25 0"
+        stroke="hsl(var(--accent))" 
+        strokeWidth="3.5" 
+        fill="none" 
+        strokeLinecap="round"
+      />
+
+      {/* Text */}
       <text
-        x="10"
-        y="35"
+        x="40"
+        y="27"
         fontFamily="Sora, sans-serif"
-        fontSize="30"
+        fontSize="22"
         fontWeight="bold"
-        fill="url(#grad1)"
+        fill="hsl(var(--foreground))"
         className="font-headline"
       >
         SkillXpress
