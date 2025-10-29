@@ -7,43 +7,43 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const plans = [
   {
-    name: 'Starter',
-    price: '$49',
+    name: 'Customer',
+    price: '₹299',
     period: '/month',
-    description: 'For individuals and small teams getting started.',
+    description: 'Access our full network of experts for your tasks.',
     features: [
-      '5 AI-powered searches per day',
-      'Access to all experts',
-      'Standard support',
+      'Unlimited AI-powered searches',
       'Secure payments',
+      'Real-time booking',
+      'Standard support',
     ],
-    cta: 'Choose Starter',
+    cta: 'Choose Customer Plan',
     image: PlaceHolderImages.find((img) => img.id === 'pricing-basic'),
   },
   {
-    name: 'Pro',
-    price: '$99',
-    period: '/month',
-    description: 'For growing businesses that need more power and flexibility.',
+    name: 'Provider',
+    price: '₹499',
+    period: '/month onwards',
+    description: 'List your skills and get hired by clients worldwide.',
     features: [
-      'Unlimited AI-powered searches',
-      'Priority access to top experts',
-      'Dedicated account manager',
-      'Advanced reporting',
+      'Premium profile listing',
+      'AI-driven job recommendations',
+      'Secure payment withdrawals',
+      'Access to premium clients',
     ],
-    cta: 'Choose Pro',
+    cta: 'Choose Provider Plan',
     popular: true,
     image: PlaceHolderImages.find((img) => img.id === 'pricing-pro'),
   },
   {
-    name: 'Enterprise',
+    name: 'Corporate',
     price: 'Contact Us',
     period: '',
-    description: 'For large organizations with custom needs.',
+    description: 'Custom solutions for your business needs.',
     features: [
+      'Bulk booking discounts',
+      'Dedicated account manager',
       'Custom expert sourcing',
-      'API access & integrations',
-      'Volume-based pricing',
       'Enterprise-grade security & SLA',
     ],
     cta: 'Contact Sales',
@@ -60,7 +60,7 @@ export default function PricingPage() {
             Find the perfect plan for your needs
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Start for free, then upgrade as you grow. All plans include access to our full network of experts.
+            Simple and transparent pricing for everyone.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

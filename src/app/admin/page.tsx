@@ -20,7 +20,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from 'recharts';
-import { DollarSign, Users, Briefcase, Percent } from 'lucide-react';
+import { Users, Briefcase, Percent } from 'lucide-react';
 import {
   Select,
   SelectContent,
@@ -30,13 +30,13 @@ import {
 } from '@/components/ui/select';
 
 const revenueData = [
-  { month: 'Jan', revenue: 4000 },
-  { month: 'Feb', revenue: 3000 },
-  { month: 'Mar', revenue: 5000 },
-  { month: 'Apr', revenue: 4500 },
-  { month: 'May', revenue: 6000 },
-  { month: 'Jun', revenue: 5500 },
-  { month: 'Jul', revenue: 7000 },
+  { month: 'Jan', revenue: 320000 },
+  { month: 'Feb', revenue: 240000 },
+  { month: 'Mar', revenue: 400000 },
+  { month: 'Apr', revenue: 360000 },
+  { month: 'May', revenue: 480000 },
+  { month: 'Jun', revenue: 440000 },
+  { month: 'Jul', revenue: 560000 },
 ];
 
 const skillDemandData = [
@@ -56,6 +56,10 @@ const conversionRateData = [
   { month: 'Jun', rate: 17 },
 ];
 
+const RupeeIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-muted-foreground"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m19 13-1-1-2 2-2-2-1 1-2 2-2-2-1 1-2 2-2-2-1 1"/><path d="M6 13h12"/></svg>
+)
+
 export default function AdminDashboardPage() {
   return (
     <div className="flex-1 space-y-4 p-8 pt-6">
@@ -67,10 +71,10 @@ export default function AdminDashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
-            <DollarSign className="h-4 w-4 text-muted-foreground" />
+            <RupeeIcon />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$45,231.89</div>
+            <div className="text-2xl font-bold">₹3,600,000</div>
             <p className="text-xs text-muted-foreground">
               +20.1% from last month
             </p>
@@ -135,8 +139,8 @@ export default function AdminDashboardPage() {
               <BarChart data={revenueData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="month" />
-                <YAxis />
-                <Tooltip />
+                <YAxis unit="₹" tickFormatter={(value) => new Intl.NumberFormat('en-IN', { notation: 'compact', compactDisplay: 'short' }).format(value as number)} />
+                <Tooltip formatter={(value) => `₹${new Intl.NumberFormat('en-IN').format(value as number)}`} />
                 <Legend />
                 <Bar dataKey="revenue" fill="hsl(var(--primary))" />
               </BarChart>

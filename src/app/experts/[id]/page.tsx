@@ -4,7 +4,6 @@ import {
   ShieldCheck,
   Star,
   MapPin,
-  DollarSign,
   Briefcase,
   Lightbulb,
 } from 'lucide-react';
@@ -15,9 +14,12 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import { Calendar } from '@/components/ui/calendar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
+const RupeeIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 mr-3 flex-shrink-0 text-primary"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m19 13-1-1-2 2-2-2-1 1-2 2-2-2-1 1-2 2-2-2-1 1"/><path d="M6 13h12"/></svg>
+)
 
 export default function ExpertProfilePage({ params }: { params: { id: string } }) {
   const expert = experts.find((e) => e.id === params.id);
@@ -66,8 +68,8 @@ export default function ExpertProfilePage({ params }: { params: { id: string } }
                             <span>{expert.location}</span>
                         </div>
                         <div className="flex items-center text-muted-foreground">
-                            <DollarSign className="h-5 w-5 mr-3 flex-shrink-0 text-primary" />
-                            <span><span className="font-bold text-foreground">${expert.hourlyRate}</span> / hour</span>
+                            <RupeeIcon />
+                            <span><span className="font-bold text-foreground">₹{expert.hourlyRate.toLocaleString('en-IN')}</span> / hour</span>
                         </div>
                         <Button size="lg" className="w-full">Book Now</Button>
                     </CardContent>

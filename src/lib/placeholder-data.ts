@@ -16,7 +16,7 @@ export const experts: Expert[] = [
     rating: 4.9,
     reviewCount: 124,
     isVerified: true,
-    hourlyRate: 95,
+    hourlyRate: 3500,
     location: 'San Francisco, CA',
     reviews: [
       {
@@ -59,7 +59,7 @@ export const experts: Expert[] = [
     rating: 4.8,
     reviewCount: 89,
     isVerified: true,
-    hourlyRate: 120,
+    hourlyRate: 4500,
     location: 'Austin, TX',
     reviews: [
       {
@@ -94,7 +94,7 @@ export const experts: Expert[] = [
     rating: 4.9,
     reviewCount: 150,
     isVerified: false,
-    hourlyRate: 110,
+    hourlyRate: 4000,
     location: 'New York, NY',
     reviews: [],
     portfolio: []
@@ -114,7 +114,7 @@ export const experts: Expert[] = [
     rating: 5.0,
     reviewCount: 210,
     isVerified: true,
-    hourlyRate: 85,
+    hourlyRate: 3000,
     location: 'Remote',
     reviews: [],
     portfolio: []
