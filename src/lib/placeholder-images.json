@@ -1,3 +1,76 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-image",
+      "description": "A vibrant abstract image representing technology and connectivity.",
+      "imageUrl": "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhYnN0cmFjdCUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzYxNzE0MjUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "expert-1",
+      "description": "Profile picture of expert Jane Doe.",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE2OTYxNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "expert-2",
+      "description": "Profile picture of expert John Smith.",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE2NjYwODB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "expert-3",
+      "description": "Profile picture of expert Alex Ray.",
+      "imageUrl": "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE2NjU3ODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "expert-4",
+      "description": "Profile picture of expert Sarah Chen.",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHNtaWxpbmd8ZW58MHx8fHwxNzYxNjc1NzM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman smiling"
+    },
+    {
+      "id": "expert-5",
+      "description": "Profile picture of expert Mike Lee.",
+      "imageUrl": "https://images.unsplash.com/photo-1616442690473-2ec0c452715c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwZ2xhc3Nlc3xlbnwwfHx8fDE3NjE3MTcwOTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man glasses"
+    },
+    {
+      "id": "expert-6",
+      "description": "Profile picture of expert Maria Garcia.",
+      "imageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3NjE2OTEyODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman professional"
+    },
+    {
+      "id": "testimonial-1-avatar",
+      "description": "Avatar for testimonial author Sarah L.",
+      "imageUrl": "https://images.unsplash.com/photo-1574641264510-d656942d6380?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3VzdG9tZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE3MzYxNzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "customer portrait"
+    },
+    {
+      "id": "testimonial-2-avatar",
+      "description": "Avatar for testimonial author David M.",
+      "imageUrl": "https://images.unsplash.com/photo-1656416571198-c644ccfaf0f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbGllbnQlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjE3NDYwMTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "client portrait"
+    },
+    {
+      "id": "pricing-basic",
+      "description": "Image for basic pricing tier.",
+      "imageUrl": "https://images.unsplash.com/photo-1600508774634-4e11d34730e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzdGFydHVwJTIwb2ZmaWNlfGVufDB8fHx8MTc2MTY0OTYzN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "startup office"
+    },
+    {
+      "id": "pricing-pro",
+      "description": "Image for pro pricing tier.",
+      "imageUrl": "https://images.unsplash.com/photo-1686771416282-3888ddaf249b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxidXNpbmVzcyUyMG1lZXRpbmd8ZW58MHx8fHwxNzYxNzIyMTQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "pricing-enterprise",
+      "description": "Image for enterprise pricing tier.",
+      "imageUrl": "https://images.unsplash.com/photo-1501324682324-0d8d7c4b9706?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb3Jwb3JhdGUlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjE2ODA2NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "corporate building"
+    }
+  ]
 }
