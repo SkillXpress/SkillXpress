@@ -24,33 +24,31 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="bg-background py-16 sm:py-24">
-      <div className="container mx-auto px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">
-            How SkillXpress Works
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-muted-foreground">
-            Getting expert help has never been easier. Just three simple steps.
-          </p>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {steps.map((step, index) => (
-            <Card key={index} className="text-center border-2 border-transparent hover:border-primary hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <CardHeader>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                  {step.icon}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardTitle className="text-xl font-semibold mb-2">{step.title}</CardTitle>
-                <p className="text-muted-foreground">{step.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <div className="container mx-auto px-6">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">
+          How SkillXpress Works
+        </h2>
+        <p className="mt-4 text-lg leading-8 text-muted-foreground">
+          Getting expert help has never been easier. Just three simple steps.
+        </p>
       </div>
-    </section>
+      <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        {steps.map((step, index) => (
+          <Card key={index} className="text-center border-2 border-transparent hover:border-primary hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <CardHeader>
+              <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                {step.icon}
+              </div>
+            </CardHeader>
+            <CardContent>
+              <CardTitle className="text-xl font-semibold mb-2">{step.title}</CardTitle>
+              <p className="text-muted-foreground">{step.description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 };
 
