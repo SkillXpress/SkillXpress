@@ -1,7 +1,8 @@
+
 'use client';
 
 import Link from 'next/link';
-import { Menu, Sparkles } from 'lucide-react';
+import { Menu, Sparkles, UserCog } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 import Logo from '@/components/Logo';
@@ -83,6 +84,11 @@ const Header = () => {
           </div>
           
           <nav className="hidden md:flex items-center gap-2">
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="/admin" title="Admin Dashboard">
+                <UserCog />
+              </Link>
+            </Button>
             <Button variant="ghost" size="sm" asChild>
               <Link href="/login">Log In</Link>
             </Button>
