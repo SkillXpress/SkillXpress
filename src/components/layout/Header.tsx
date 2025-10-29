@@ -15,8 +15,9 @@ import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/experts', label: 'Find Experts' },
+  { href: '/how-it-works', label: 'How it works' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/experts', label: 'Find Experts' },
   { href: '/corporate', label: 'Corporate' },
 ];
 
@@ -26,11 +27,11 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <div className="mr-4 hidden md:flex">
+        <div className="mr-auto md:mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo />
           </Link>
-          <nav className="flex items-center gap-4 text-sm">
+          <nav className="hidden items-center gap-4 text-sm md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -48,7 +49,7 @@ const Header = () => {
           </nav>
         </div>
 
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+        <div className="flex items-center justify-end gap-2">
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -80,26 +81,14 @@ const Header = () => {
               </SheetContent>
             </Sheet>
           </div>
-
-          <div className="hidden md:block">
-            <Link href="/" className="md:hidden">
-              <Logo />
-            </Link>
-          </div>
-
-          <nav className="flex items-center gap-2">
-            <Button variant="ghost" size="sm">
-              Log In
+          
+          <nav className="hidden md:flex items-center gap-2">
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/login">Log In</Link>
             </Button>
-            <Button size="sm">
-              Sign Up
+            <Button size="sm" asChild>
+              <Link href="/signup">Sign Up</Link>
             </Button>
-            <Link href="/onboarding/expert">
-              <Button variant="outline" size="sm" className="ml-2">
-                <Sparkles className="mr-2 h-4 w-4 text-accent" />
-                Become an Expert
-              </Button>
-            </Link>
           </nav>
         </div>
       </div>

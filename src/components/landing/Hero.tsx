@@ -6,6 +6,7 @@ import { Cpu, Loader2, Search, Sparkles, Star, Users } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import Link from 'next/link';
 
 import { skillMatcher, SkillMatcherOutput } from '@/ai/flows/skill-matcher-prompt';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -44,19 +45,27 @@ const AISkillMatcher = () => {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     setResults(null);
     startTransition(async () => {
-      const { expertSuggestions, ...rest } = await skillMatcher({
-        skillRequest: values.skillRequest,
-      });
-
-      if (!expertSuggestions) {
-        toast({
-          variant: 'destructive',
-          title: 'Error',
-          description: 'Could not find any matching experts. Please try a different query.',
+      try {
+        const { expertSuggestions, ...rest } = await skillMatcher({
+          skillRequest: values.skillRequest,
         });
-        return;
+
+        if (!expertSuggestions || expertSuggestions.length === 0) {
+          toast({
+            variant: 'destructive',
+            title: 'No Experts Found',
+            description: 'Our AI couldn\'t find a match. Please try a different or more detailed request.',
+          });
+          return;
+        }
+        setResults({ expertSuggestions, ...rest });
+      } catch (error) {
+         toast({
+            variant: 'destructive',
+            title: 'An Error Occurred',
+            description: 'There was an issue with the AI matcher. Please try again.',
+        });
       }
-      setResults({ expertSuggestions, ...rest });
     });
   };
 
@@ -155,31 +164,35 @@ const Hero = () => {
         />
       )}
       <div className="container relative z-10">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <Badge variant="secondary" className="bg-accent/10 text-accent-foreground border-accent/20">
             <Sparkles className="mr-2 h-4 w-4 text-accent" />
-            Powered by Generative AI
+            Any Skill. Any Time. Anywhere.
           </Badge>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl font-headline">
             Find Your Perfect Expert, Instantly.
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Describe your task, and our AI will instantly match you with verified, top-tier experts ready to start right away.
+            Describe your task, and our AI will instantly match you with verified, top-tier experts ready to start right away. SkillXpress connects you with professionals for coding, design, marketing, and more.
           </p>
 
-          <div className="mt-10 w-full">
+          <div className="mt-10 w-full max-w-2xl">
             <AISkillMatcher />
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4" />
-              <span>10,000+ experts available</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Star className="h-4 w-4" />
-              <span>4.9/5 average rating</span>
-            </div>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Button asChild>
+                <Link href="/experts">Book an Expert</Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/onboarding/expert">Become a Provider</Link>
+              </Button>
+               <Button variant="ghost" asChild>
+                <Link href="/pricing">See Pricing</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="/corporate">Contact Us</Link>
+              </Button>
           </div>
         </div>
       </div>
