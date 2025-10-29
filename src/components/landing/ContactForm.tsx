@@ -2,9 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { useForm, ValidationError } from '@formspree/react';
 import { Send } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -12,12 +10,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
-
-const formSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters.'),
-  email: z.string().email('Please enter a valid email address.'),
-  message: z.string().min(10, 'Message must be at least 10 characters.'),
-});
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -38,25 +30,36 @@ const itemVariants = {
 
 const ContactForm = () => {
   const { toast } = useToast();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: { name: '', email: '', message: '' },
-  });
+  const [state, handleSubmit] = useForm("mgvpyoqn");
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. We'll get back to you shortly.",
-    });
-    form.reset();
-  };
+  if (state.succeeded) {
+    return (
+        <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="container mx-auto max-w-3xl text-center"
+        >
+            <Card>
+                <CardContent className="p-10">
+                    <motion.h2 variants={itemVariants} className="text-2xl font-bold tracking-tight sm:text-3xl font-headline">
+                        Thanks for your message!
+                    </motion.h2>
+                    <motion.p variants={itemVariants} className="mt-4 text-lg text-muted-foreground">
+                        We'll get back to you shortly.
+                    </motion.p>
+                </CardContent>
+            </Card>
+        </motion.div>
+    );
+  }
 
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       className="container mx-auto max-w-3xl"
     >
       <Card className="overflow-hidden">
@@ -69,21 +72,30 @@ const ContactForm = () => {
             </motion.p>
         </CardHeader>
         <CardContent>
-             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+             <form onSubmit={handleSubmit} className="space-y-6">
                 <motion.div variants={itemVariants} className="space-y-2">
-                    <Input placeholder="Your Name" {...form.register('name')} />
-                    {form.formState.errors.name && <p className="text-sm text-destructive">{form.formState.errors.name.message}</p>}
+                    <Input placeholder="Your Name" id="name" type="text" name="name" />
                 </motion.div>
                 <motion.div variants={itemVariants} className="space-y-2">
-                    <Input placeholder="Your Email" {...form.register('email')} />
-                    {form.formState.errors.email && <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>}
+                    <Input placeholder="Your Email" id="email" type="email" name="email" />
+                    <ValidationError 
+                        prefix="Email" 
+                        field="email"
+                        errors={state.errors}
+                        className="text-sm text-destructive"
+                    />
                 </motion.div>
                 <motion.div variants={itemVariants} className="space-y-2">
-                    <Textarea placeholder="Your Message" {...form.register('message')} rows={5}/>
-                    {form.formState.errors.message && <p className="text-sm text-destructive">{form.formState.errors.message.message}</p>}
+                    <Textarea placeholder="Your Message" id="message" name="message" rows={5}/>
+                    <ValidationError 
+                        prefix="Message" 
+                        field="message"
+                        errors={state.errors}
+                        className="text-sm text-destructive"
+                    />
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                    <Button type="submit" size="lg" className="w-full">
+                    <Button type="submit" size="lg" className="w-full" disabled={state.submitting}>
                         <Send className="mr-2 h-5 w-5" />
                         Send Message
                     </Button>
